@@ -465,7 +465,7 @@ document.getElementById('me').onclick = function() {
     navigator.geolocation.getCurrentPosition(function(pos) {
         map.setView([pos.coords.longitude, pos.coords.latitude], 8);
        // map.options.minZoom = 12;
-        map.options.maxZoom = 20;
+        map.options.maxZoom = 16;
         var res = leafletPip.pointInLayer(
             [pos.coords.longitude, pos.coords.latitude], gjLayer);
         if (res.length) {
@@ -495,9 +495,12 @@ document.getElementById('me').onclick = function() {
                 shadowAnchor: [4, 62],  // the same for the shadow
                 popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
             });
-            L.marker([pos.coords.latitude.round(3), pos.coords.longitude.round(3) + 001], {icon: educationIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
-            L.marker([pos.coords.latitude.round(3), pos.coords.longitude.round(3) + 002], {icon: buildingIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
-            L.marker([pos.coords.latitude.round(3), pos.coords.longitude.round(3) + 003], {icon: greenIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+            
+            var tempLat = pos.coords.latitude.round(3);
+            var tempLong = pos.coords.longitude.round(3);
+            L.marker([tempLat,  tempLong+""+01], {icon: educationIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+            L.marker([tempLat, tempLong+""+02], {icon: buildingIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+            L.marker([tempLat, tempLong+""+03], {icon: greenIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
             
             document.getElementById('me').innerHTML = res[0].feature.properties.LABEL_E;
             
