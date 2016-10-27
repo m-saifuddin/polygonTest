@@ -463,8 +463,8 @@ document.getElementById('me').onclick = function() {
             [pos.coords.longitude, pos.coords.latitude], gjLayer);
         if (res.length) {
             document.getElementById('me').innerHTML = res[0].feature.properties.LABEL_E;
-            L.marker([pos.coords.longitude,  pos.coords.latitude]).addTo(map)
-.bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+            L.marker([pos.coords.latitude, pos.coords.longitude]).addTo(map)
+.bindPopup("<b>"+res[0].feature.properties.LABEL_E+"</b><br />I am a popup.").openPopup();
         } else {
             document.getElementById('me').innerHTML = 'You aren\'t in Dubai';
         }
