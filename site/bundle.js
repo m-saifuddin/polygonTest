@@ -450,7 +450,8 @@ module.exports = leafletPip;
 var leafletPip = require('../'),
     map = L.map('map').setView([25, 55.42], 8),
     gjLayer = L.geoJson(statesData);
-
+map.options.minZoom = 12;
+map.options.maxZoom = 14;
 L.tileLayer('https://a.tiles.mapbox.com/v3/tmcw.map-l1m85h7s/{z}/{x}/{y}.png')
     .addTo(map);
 
@@ -461,7 +462,7 @@ document.getElementById('me').onclick = function() {
         var res = leafletPip.pointInLayer(
             [pos.coords.longitude, pos.coords.latitude], gjLayer);
         if (res.length) {
-            document.getElementById('me').innerHTML = res[0].feature.properties.LABEL_E;
+           document.getElementById('me').innerHTML = res[0].feature.properties.LABEL_E;
             L.marker([pos.coords.latitude, pos.coords.longitude]).addTo(map).bindPopup("<b>Welcome!!</b><br />I am a popup.").openPopup();
 	    map.options.maxZoom = 14;
         } else {
