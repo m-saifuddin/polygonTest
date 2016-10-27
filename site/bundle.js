@@ -462,7 +462,7 @@ document.getElementById('me').onclick = function() {
             [pos.coords.longitude, pos.coords.latitude], gjLayer);
         if (res.length) {
             document.getElementById('me').innerHTML = res[0].feature.properties.LABEL_E;
-            L.marker([pos.coords.latitude, pos.coords.longitude]).addTo(map).bindPopup("<b>"+res[0].feature.properties.LABEL_E+"</b><br />I am a popup.").openPopup();
+            L.marker([pos.coords.latitude, pos.coords.longitude]).addTo(map).bindPopup("<b>Welcome!!</b><br />I am a popup.").openPopup();
 	    map.options.maxZoom = 14;
         } else {
             document.getElementById('me').innerHTML = 'You aren\'t in Dubai';
