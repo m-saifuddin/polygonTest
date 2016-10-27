@@ -12,6 +12,11 @@ function isPoly(l) {
         ['Polygon', 'MultiPolygon'].indexOf(l.feature.geometry.type) !== -1;
 }
 
+Number.prototype.round = function(p) {
+  p = p || 10;
+  return parseFloat( this.toFixed(p) );
+};
+    
 var leafletPip = {
     bassackwards: false,
     pointInLayer: function(p, layer, first) {
@@ -490,17 +495,18 @@ document.getElementById('me').onclick = function() {
                 shadowAnchor: [4, 62],  // the same for the shadow
                 popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
             });
-            L.marker([pos.coords.latitude + 001, pos.coords.latitude + 001], {icon: educationIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
-            L.marker([pos.coords.latitude + 010, pos.coords.latitude + 011], {icon: buildingIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
-            L.marker([pos.coords.latitude + 010, pos.coords.latitude + 011], {icon: greenIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+            L.marker([pos.coords.latitude.round(3) + 001, pos.coords.longitude.round(3) + 001], {icon: educationIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+            L.marker([pos.coords.latitude.round(3) + 010, pos.coords.longitude.round(3) + 011], {icon: buildingIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+            L.marker([pos.coords.latitude.round(3) + 010, pos.coords.longitude.round(3) + 011], {icon: greenIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
             
             document.getElementById('me').innerHTML = res[0].feature.properties.LABEL_E;
             
-            L.marker([pos.coords.latitude, pos.coords.longitude]).addTo(map).bindPopup("<b>Welcome!!</b><br />I am a popup.").openPopup();
+            L.marker([pos.coords.latitude.round(3), pos.coords.longitude.round(3)]).addTo(map).bindPopup("<b>Welcome!!</b><br />I am a popup.").openPopup();
             
         } else {
             document.getElementById('me').innerHTML = 'You aren\'t in Dubai';
         }
     });
 };
+
 },{"../":1}]},{},[3]);
