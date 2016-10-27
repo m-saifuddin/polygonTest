@@ -496,8 +496,8 @@ document.getElementById('me').onclick = function() {
                 popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
             });
             L.marker([pos.coords.latitude.round(3), pos.coords.longitude.round(3) + 001], {icon: educationIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
-            L.marker([pos.coords.latitude.round(3), pos.coords.longitude.round(3) + 011], {icon: buildingIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
-            L.marker([pos.coords.latitude.round(3), pos.coords.longitude.round(3) + 011], {icon: greenIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+            L.marker([pos.coords.latitude.round(3), pos.coords.longitude.round(3) + 002], {icon: buildingIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+            L.marker([pos.coords.latitude.round(3), pos.coords.longitude.round(3) + 003], {icon: greenIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
             
             document.getElementById('me').innerHTML = res[0].feature.properties.LABEL_E;
             
