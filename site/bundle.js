@@ -461,9 +461,9 @@ document.getElementById('me').onclick = function() {
         var res = leafletPip.pointInLayer(
             [pos.coords.longitude, pos.coords.latitude], gjLayer);
         if (res.length) {
-            document.getElementById('me').innerHTML = res[0].feature.properties.name;
+            document.getElementById('me').innerHTML = res[0].feature.properties.LABEL_E;
         } else {
-            document.getElementById('me').innerHTML = 'You aren\'t in America';
+            document.getElementById('me').innerHTML = 'You aren\'t in Dubai';
         }
     });
 };
