@@ -458,15 +458,46 @@ gjLayer.addTo(map);
 
 document.getElementById('me').onclick = function() {
     navigator.geolocation.getCurrentPosition(function(pos) {
-	    
         map.setView([pos.coords.longitude, pos.coords.latitude], 8);
         map.options.minZoom = 12;
         map.options.maxZoom = 14;
         var res = leafletPip.pointInLayer(
             [pos.coords.longitude, pos.coords.latitude], gjLayer);
         if (res.length) {
-           document.getElementById('me').innerHTML = res[0].feature.properties.LABEL_E;
+            
+            var buildingIcon = L.icon({
+		        iconUrl: 'http://static-dc.autodesk.net/content/dam/autodesk/www/solutions/bim/images/overview/buildings.png',
+                iconSize:     [38, 40], // size of the icon
+                shadowSize:   [50, 64], // size of the shadow
+                iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+                shadowAnchor: [4, 62],  // the same for the shadow
+                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+            });
+
+            var educationIcon = L.icon({
+                iconUrl: 'http://www.perfectenglish.com.tr/wp-content/uploads/student.png',
+                iconSize:     [38, 40], // size of the icon
+                shadowSize:   [50, 64], // size of the shadow
+                iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+                shadowAnchor: [4, 62],  // the same for the shadow
+                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+            });
+            var greenIcon = L.icon({
+                iconUrl: 'http://image.flaticon.com/icons/png/512/32/32441.png',
+                iconSize:     [38, 40], // size of the icon
+                shadowSize:   [50, 64], // size of the shadow
+                iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+                shadowAnchor: [4, 62],  // the same for the shadow
+                popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
+            });
+            L.marker([pos.coords.latitude + 001, pos.coords.latitude + 001], {icon: educationIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+            L.marker([pos.coords.latitude + 010, pos.coords.latitude + 011], {icon: buildingIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+            L.marker([pos.coords.latitude + 010, pos.coords.latitude + 011], {icon: greenIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+            
+            document.getElementById('me').innerHTML = res[0].feature.properties.LABEL_E;
+            
             L.marker([pos.coords.latitude, pos.coords.longitude]).addTo(map).bindPopup("<b>Welcome!!</b><br />I am a popup.").openPopup();
+            
         } else {
             document.getElementById('me').innerHTML = 'You aren\'t in Dubai';
         }
