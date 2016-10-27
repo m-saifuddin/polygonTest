@@ -458,6 +458,7 @@ gjLayer.addTo(map);
 
 document.getElementById('me').onclick = function() {
     navigator.geolocation.getCurrentPosition(function(pos) {
+	    
         map.setView([pos.coords.longitude, pos.coords.latitude], 8);
         map.options.minZoom = 12;
         map.options.maxZoom = 14;
