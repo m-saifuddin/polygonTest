@@ -498,9 +498,9 @@ document.getElementById('me').onclick = function() {
             
             var tempLat = pos.coords.latitude.round(3);
             var tempLong = pos.coords.longitude.round(3);
-            L.marker([parseFloat(tempLat+""+0001),  parseFloat(tempLong+""+0010)], {icon: educationIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
-            L.marker([parseFloat(tempLat+""+0005), parseFloat(tempLong+""+0012)], {icon: buildingIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
-            L.marker([parseFloat(tempLat+""+0008), parseFloat(tempLong+""+0020)], {icon: greenIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+            L.marker([parseFloat(tempLat+""+0010),  parseFloat(tempLong+""+0010)], {icon: educationIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+            L.marker([parseFloat(tempLat+""+0012), parseFloat(tempLong+""+0012)], {icon: buildingIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+            L.marker([parseFloat(tempLat+""+0020), parseFloat(tempLong+""+0020)], {icon: greenIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
             
             document.getElementById('me').innerHTML = res[0].feature.properties.LABEL_E;
             
