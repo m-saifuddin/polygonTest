@@ -470,7 +470,7 @@ document.getElementById('me').onclick = function() {
         var res = leafletPip.pointInLayer(
             [pos.coords.longitude, pos.coords.latitude], gjLayer);
         if (res.length) {
-            var html="<b>You're Currently in Academic City!</b><br /><img src='http://image.flaticon.com/icons/png/512/32/32441.png' height='40'>&nbsp;<img src='http://www.perfectenglish.com.tr/wp-content/uploads/student.png' height='40'>&nbsp;<img src='http://static-dc.autodesk.net/content/dam/autodesk/www/solutions/bim/images/overview/buildings.png' height='40'>"; 
+            var html="<b>You're Currently in "+res[0].feature.properties.LABEL_E+"</b><br /><img src='http://image.flaticon.com/icons/png/512/32/32441.png' height='40'>&nbsp;<img src='http://www.perfectenglish.com.tr/wp-content/uploads/student.png' height='40'>&nbsp;<img src='http://static-dc.autodesk.net/content/dam/autodesk/www/solutions/bim/images/overview/buildings.png' height='40'>"; 
             /*var tempLat = pos.coords.latitude.round(3);
             var tempLong = pos.coords.longitude.round(3);
             L.marker([parseFloat(tempLat+""+0040),  parseFloat(tempLong+""+50)], {icon: educationIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
