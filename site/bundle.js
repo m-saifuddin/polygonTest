@@ -478,7 +478,6 @@ document.getElementById('me').onclick = function() {
             L.marker([parseFloat(tempLat+""+0025), parseFloat(tempLong+""+30)], {icon: populationIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
             */
             document.getElementById('me').innerHTML = res[0].feature.properties.LABEL_E;
-            
             L.marker([pos.coords.latitude.round(3), pos.coords.longitude.round(3)]).addTo(map).bindPopup(html).openPopup();
             
         } else {
