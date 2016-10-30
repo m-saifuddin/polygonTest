@@ -488,7 +488,7 @@ document.getElementById('me').onclick = function() {
                 shadowAnchor: [4, 62],  // the same for the shadow
                 popupAnchor:  [-3, -76] // point from which the popup should open relative to the iconAnchor
             });
-            var greenIcon = L.icon({
+            var populationIcon = L.icon({
                 iconUrl: 'http://image.flaticon.com/icons/png/512/32/32441.png',
                 iconSize:     [38, 40], // size of the icon
                 shadowSize:   [50, 64], // size of the shadow
@@ -499,9 +499,9 @@ document.getElementById('me').onclick = function() {
             
             var tempLat = pos.coords.latitude.round(3);
             var tempLong = pos.coords.longitude.round(3);
-            L.marker([parseFloat(tempLat+""+0010),  parseFloat(tempLong+""+10)], {icon: educationIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
-            L.marker([parseFloat(tempLat+""+0012), parseFloat(tempLong+""+12)], {icon: buildingIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
-            L.marker([parseFloat(tempLat+""+0020), parseFloat(tempLong+""+20)], {icon: greenIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+            L.marker([parseFloat(tempLat+""+0040),  parseFloat(tempLong+""+50)], {icon: educationIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+            L.marker([parseFloat(tempLat+""+0035), parseFloat(tempLong+""+40)], {icon: buildingIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+            L.marker([parseFloat(tempLat+""+0025), parseFloat(tempLong+""+30)], {icon: populationIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
             
             document.getElementById('me').innerHTML = res[0].feature.properties.LABEL_E;
             
