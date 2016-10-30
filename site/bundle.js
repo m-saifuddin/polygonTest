@@ -465,7 +465,7 @@ document.getElementById('me').onclick = function() {
     navigator.geolocation.getCurrentPosition(function(pos) {
         map.setView([pos.coords.longitude, pos.coords.latitude], 8);
         map.options.minZoom = 8;
-        map.options.maxZoom = 16;
+        map.options.maxZoom = 12;
         var res = leafletPip.pointInLayer(
             [pos.coords.longitude, pos.coords.latitude], gjLayer);
         if (res.length) {
