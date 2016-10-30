@@ -463,9 +463,10 @@ gjLayer.addTo(map);
 
 document.getElementById('me').onclick = function() {
     navigator.geolocation.getCurrentPosition(function(pos) {
-        map.setView([pos.coords.longitude, pos.coords.latitude], 8);
+        //map.setView([pos.coords.longitude, pos.coords.latitude], 8);
+	map.panTo(new L.LatLng(pos.coords.longitude, pos.coords.latitude));
         map.options.minZoom = 8;
-        map.options.maxZoom = 12;
+        map.options.maxZoom = 20;
         var res = leafletPip.pointInLayer(
             [pos.coords.longitude, pos.coords.latitude], gjLayer);
         if (res.length) {
