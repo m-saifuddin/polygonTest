@@ -498,9 +498,9 @@ document.getElementById('me').onclick = function() {
             
             var tempLat = pos.coords.latitude.round(3);
             var tempLong = pos.coords.longitude.round(3);
-            L.marker([tempLat,  parseFloat(tempLong+""+01)], {icon: educationIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
-            L.marker([tempLat, parseFloat(tempLong+""+02)], {icon: buildingIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
-            L.marker([tempLat, parseFloat(tempLong+""+03)], {icon: greenIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+            L.marker([tempLat,  parseFloat(tempLong+""+001)], {icon: educationIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+            L.marker([tempLat, parseFloat(tempLong+""+002)], {icon: buildingIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
+            L.marker([tempLat, parseFloat(tempLong+""+003)], {icon: greenIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
             
             document.getElementById('me').innerHTML = res[0].feature.properties.LABEL_E;
             
