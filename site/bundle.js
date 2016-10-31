@@ -456,7 +456,7 @@ var leafletPip = require('../'),
     map = L.map('map').setView([25, 55.42], 8),
     gjLayer = L.geoJson(statesData);
 
-L.tileLayer('https://a.tiles.mapbox.com/v3/tmcw.map-l1m85h7s/{z}/{x}/{y}.png')
+L.tileLayer('https://{s}.tiles.mapbox.com/v4/christianjunk.e3e05ee8/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiY2hyaXN0aWFuanVuayIsImEiOiJkMjIzMzRjNzBlNjc1OWUxYmE0NzBjNzQ3MWNiYTNkMyJ9.q4y4NMEwFYGRZdSEfPBg7A')
     .addTo(map);
 
 gjLayer.addTo(map);
