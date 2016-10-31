@@ -453,10 +453,10 @@ module.exports = leafletPip;
 
 },{}],3:[function(require,module,exports){
 var leafletPip = require('../'),
-    map = L.map('map').setView([25, 55.42], 8),
+    map = L.map('map').setView([25.099068, 55.209122], 8),
     gjLayer = L.geoJson(statesData);
 
-L.tileLayer('https://{s}.tiles.mapbox.com/v4/christianjunk.e3e05ee8/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoiY2hyaXN0aWFuanVuayIsImEiOiJkMjIzMzRjNzBlNjc1OWUxYmE0NzBjNzQ3MWNiYTNkMyJ9.q4y4NMEwFYGRZdSEfPBg7A')
+L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v9/tiles/256/{level}/{col}/{row}@2x?access_token=pk.eyJ1Ijoic2FpZi11ZGRpbiIsImEiOiJjaXV4cW5rdnEwMDNqMnRtbWZyc3VkaTV4In0.B3IWJLOAmMxVW8fmuc3inA')
     .addTo(map);
 
 gjLayer.addTo(map);
