@@ -460,7 +460,13 @@ L.tileLayer('https://a.tiles.mapbox.com/v3/tmcw.map-l1m85h7s/{z}/{x}/{y}.png')
     .addTo(map);
 
 gjLayer.addTo(map);
-
+var cssIcon = L.divIcon({
+		  className: 'css-icon',
+		  html: '<div class="gps_ring"></div>'
+		  // Set marker width and height
+		  ,iconSize: [22,22]
+		  // ,iconAnchor: [11,11]
+		});	
 document.getElementById('me').onclick = function() {
     navigator.geolocation.getCurrentPosition(function(pos) {
         map.setView([pos.coords.longitude, pos.coords.latitude], 18);
@@ -478,7 +484,7 @@ document.getElementById('me').onclick = function() {
             L.marker([parseFloat(tempLat+""+0025), parseFloat(tempLong+""+30)], {icon: populationIcon}).addTo(map).bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
             */
             document.getElementById('me').innerHTML = res[0].feature.properties.LABEL_E;
-            L.marker([pos.coords.latitude.round(3), pos.coords.longitude.round(3)]).addTo(map).bindPopup(html).openPopup();
+            L.marker([pos.coords.latitude.round(3), pos.coords.longitude.round(3)], {icon: cssIcon}).addTo(map).bindPopup(html).openPopup();
             
         } else {
             document.getElementById('me').innerHTML = 'You aren\'t in Dubai';
