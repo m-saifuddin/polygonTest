@@ -456,7 +456,7 @@ var leafletPip = require('../'),
     map = L.map('map').setView([25.099068, 55.209122], 8),
     gjLayer = L.geoJson(statesData);
 
-L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v9/tiles/256/{level}/{col}/{row}@2x?access_token=pk.eyJ1Ijoic2FpZi11ZGRpbiIsImEiOiJjaXV4cW5rdnEwMDNqMnRtbWZyc3VkaTV4In0.B3IWJLOAmMxVW8fmuc3inA')
+L.tileLayer('https://api.mapbox.com/styles/v1/mapbox/streets-v9/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2FpZi11ZGRpbiIsImEiOiJjaXV4cW5rdnEwMDNqMnRtbWZyc3VkaTV4In0.B3IWJLOAmMxVW8fmuc3inA')
     .addTo(map);
 
 gjLayer.addTo(map);
